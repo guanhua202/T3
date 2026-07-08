@@ -99,6 +99,23 @@ def is_win_check(game_field):
                 total_o = []
 
         # Парсинг элементов по диагонали (Главной и Побочной)
+        for i in range(0, n):
+            if game_field[i][i] == 'X' or game_field[i][n-i-1] == 'X': # Главная/Побочная диагональ
+                total_x.append(1)
+            if game_field[i][i] == 'O' or game_field[i][n-i-1] == 'O': # Главная/Побочная диагональ
+                total_o.append(1)
+
+        if sum(total_x) == 3:
+            display_winner(game_field, 'Крестик')
+            return False
+
+        elif sum(total_o) == 3:
+            display_winner(game_field, 'Нолик')
+            return False
+        
+        else:
+            total_x = []
+            total_o = []
         
     # Если пустых полей нет, то конец игры
     if sum(total_line) == 0:
@@ -147,16 +164,9 @@ while main_menu != 0:
                 else:
                     while hero_choice(field, player_move, 'X') == False:
                         player_move = int(input("Выбери позицию куда сделать ход (от 1 до 9): "))
-                        # hero_choice(field, player_move, 'X')
-
-                    breakpoent += 1
-
-                    if breakpoent == 8:
-                        pass
 
                     while hero_choice(field, bot_move, 'O', True) == False:
                         bot_move = random.randint(1, 9)
-                        # hero_choice(field, bot_move, 'O', True)
 
         elif hero_num == 2:
             print("Ты выбрал Нолик (O)")
@@ -175,11 +185,9 @@ while main_menu != 0:
                 else:
                     while hero_choice(field, player_move, 'O') == False:
                         player_move = int(input("Выбери позицию куда сделать ход (от 1 до 9): "))
-                        # hero_choice(field, player_move, 'O')
 
                     while hero_choice(field, bot_move, 'X', True) == False:
                         bot_move = random.randint(1, 9)
-                        # hero_choice(field, bot_move, 'X', True)
         else:
             print("Введи цифру 1 или 2")
 
@@ -187,13 +195,7 @@ while main_menu != 0:
     main_menu = int(input(": "))
 
 # =========Задачи==========
-# 1. Отслеживать кто победил
-#   o Надо сканировать поле на наличие победных комбинаций
-#       o Сделать проверку комбинаций
-#           o Главной диагонали
-#           o Побочной диагонали
+# Удалить баг двойного вывода
 
 # =========Доработки==========
-# 1. Предупреждать о том, что ход на указанном поле сделан (если кншн он сделан)
-#   o Не давать ставить боту ход на занятую клетку
-#       o Написать для бота отдельную функцию по проверке хода
+# . . .
