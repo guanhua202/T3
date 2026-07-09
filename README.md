@@ -5,6 +5,9 @@
   - ✅ Single player game with a bot
   - ✅ Choice of a hero "Tic-Tac-Toe"
   - ✅ 2 categories of winning combinations (Horizontal and Vertical)
+#### Additional changes:
+  - ✅ +2 categories of winning combinations (Main and Side Diagonals)
+  - ✅ Cleaning, putty, painting, smearing with shit, all over the code
 ------------------------------------------------------------
 
 # Крестики-нолики (Примечания к выпуску RU 🇷🇺)
